@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/configurateBusFullscreenConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activities.ConfigurateBusActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Ingresar datos"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/title"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/locationAppCompatImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+        android:id="@+id/routeTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_big_margin"
+        android:layout_marginTop="@dimen/big_big_margin"
+        android:text="Ruta a utilizar"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/routeCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoAppCompatImageView" />
+
+    <TextView
+        android:id="@+id/activateTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_big_margin"
+        android:layout_marginTop="@dimen/big_big_margin"
+        android:text="Ruta a utilizar"
+        android:textColor="@color/colorPrimaryText"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/activateSwitchCompat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/routeCardView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/locationAppCompatImageView"
+        android:layout_width="@dimen/location_size"
+        android:layout_height="@dimen/location_size"
+        android:layout_marginTop="@dimen/big_big_margin"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/logoAppCompatImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:srcCompat="@drawable/ic_location" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logoAppCompatImageView"
+        android:layout_width="@dimen/bus_size"
+        android:layout_height="@dimen/bus_size"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/routeTitleTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationAppCompatImageView"
+        app:srcCompat="@drawable/ic_bus" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/activateSwitchCompat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_big_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        app:layout_constraintBottom_toTopOf="@+id/loginCardView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activateTitleTextView" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/routeCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_big_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/big_big_big_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/white"
+        app:cardCornerRadius="@dimen/default_margin"
+        app:cardElevation="@dimen/card_shadow"
+        app:layout_constraintBottom_toTopOf="@+id/activateTitleTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/routeTitleTextView">
+
+        <ProgressBar
+            android:id="@+id/routeProgressBar"
+            android:layout_width="@dimen/progress_bar_in_spinner"
+            android:layout_height="@dimen/progress_bar_in_spinner"
+            android:layout_margin="@dimen/default_margin"
+            android:indeterminate="true"
+            android:theme="@style/ProgressBarStyleToolbar"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/routeMaterialSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            app:ms_arrow_tint="@android:color/black"
+            app:ms_background_color="@android:color/white"
+            app:ms_text_color="@android:color/black" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/loginCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_big_margin"
+        android:layout_marginTop="@dimen/big_big_margin"
+        android:layout_marginEnd="@dimen/big_big_big_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/black"
+        app:cardCornerRadius="@dimen/corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activateSwitchCompat">
+
+        <TextView
+            android:id="@+id/loginTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_margin="@dimen/big_margin"
+            android:text="Aceptar"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/logOutAppCompatImageButton"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginEnd="@dimen/default_margin"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_exit_to_app" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/driverLoginFullscreenConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activities.DriverLoginActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Ingresar datos"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/title"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/locationAppCompatImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/locationAppCompatImageView"
+        android:layout_width="@dimen/location_size"
+        android:layout_height="@dimen/location_size"
+        android:visibility="visible"
+        android:layout_marginTop="@dimen/big_big_margin"
+        app:layout_constraintBottom_toTopOf="@+id/logoAppCompatImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:srcCompat="@drawable/ic_location" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logoAppCompatImageView"
+        android:layout_width="@dimen/bus_size"
+        android:layout_height="@dimen/bus_size"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/userCustomEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/locationAppCompatImageView"
+        app:srcCompat="@drawable/ic_bus" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/loginCardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_big_margin"
+        android:layout_marginEnd="@dimen/big_big_big_margin"
+        android:layout_marginTop="@dimen/big_big_margin"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@android:color/black"
+        app:cardCornerRadius="@dimen/corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordCustomEditText">
+
+        <ProgressBar
+            android:id="@+id/loginProgressBar"
+            android:layout_width="@dimen/progressBarSize"
+            android:layout_height="@dimen/progressBarSize"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_margin="@dimen/default_margin"
+            android:indeterminate="true"
+            android:theme="@style/ProgressBarStyleWhite"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/loginTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:layout_margin="@dimen/big_margin"
+            android:text="Ingresar"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <com.libizo.CustomEditText
+        android:id="@+id/passwordCustomEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_big_margin"
+        android:layout_marginEnd="@dimen/big_big_big_margin"
+        android:layout_marginTop="@dimen/default_margin"
+        android:drawableStart="@drawable/ic_lock"
+        android:hint="Contraseña"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintBottom_toTopOf="@id/loginCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userCustomEditText"
+        app:libIZO_hideShowPasswordIconTint="@android:color/black"
+        app:libIZO_setBackgroundColor="@android:color/white"
+        app:libIZO_setBorderColor="@android:color/darker_gray"
+        app:libIZO_setBorderView="true"
+        app:libIZO_setCornerRadius="@dimen/default_margin" />
+
+    <com.libizo.CustomEditText
+        android:id="@+id/userCustomEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_big_big_margin"
+        android:layout_marginEnd="@dimen/big_big_big_margin"
+        android:layout_marginTop="@dimen/big_big_margin"
+        android:drawableStart="@drawable/ic_person"
+        android:hint="Usuario"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintBottom_toTopOf="@+id/passwordCustomEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoAppCompatImageView"
+        app:libIZO_setBackgroundColor="@android:color/white"
+        app:libIZO_setBorderColor="@android:color/darker_gray"
+        app:libIZO_setBorderView="true"
+        app:libIZO_setCornerRadius="@dimen/default_margin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

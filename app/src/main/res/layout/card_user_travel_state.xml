@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/stateCardView"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="@dimen/card_shadow"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardBackgroundColor="@android:color/white"
+    android:layout_marginStart="@dimen/big_big_big_margin"
+    android:layout_marginEnd="@dimen/big_big_big_margin"
+    android:layout_marginTop="@dimen/big_margin"
+    app:cardCornerRadius="@dimen/corner_radius">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/busStopAppCompatImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_card_account"
+            android:layout_marginTop="@dimen/big_margin"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/big_margin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/stateTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginTop="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/big_margin"
+            android:layout_marginEnd="@dimen/big_margin"
+            android:text="Espera"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/busStopAppCompatImageView"
+            app:layout_constraintEnd_toStartOf="@id/numberTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/numberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/big_margin"
+            android:layout_marginEnd="@dimen/default_margin"
+            android:text="#"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/speakerAppCompatImageView"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/speakerAppCompatImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:srcCompat="@drawable/ic_speaker"
+            android:layout_marginTop="@dimen/big_margin"
+            android:layout_marginEnd="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/big_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
